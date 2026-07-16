@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rebar-intersection-detection"
+version = "1.0.0"
+description = "Detect rebar mesh intersection points from 3D point clouds"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+dependencies = [
+  "open3d>=0.17",
+  "numpy",
+  "matplotlib",
+  "scikit-learn",
+  "sympy",
+  "pyransac3d",
+]
+
+[project.scripts]
+rebar-detect = "rebar_intersection.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["rebar_intersection*"]
